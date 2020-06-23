@@ -11,14 +11,12 @@
 
 namespace Respect\Validation\Rules;
 
-use Respect\Validation\TestCase;
-
 /**
  * @group  rule
  * @covers Respect\Validation\Rules\Alnum
  * @covers Respect\Validation\Exceptions\AlnumException
  */
-class AlnumTest extends TestCase
+class AlnumTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider providerForValidAlnum
@@ -79,8 +77,7 @@ class AlnumTest extends TestCase
     {
         return [
             ['alganet', ''],
-            ['foo :- 123 !', '- ! :'],
-            ['number 100%', '%'],
+            ['alganet', 'alganet'],
             ['0alg-anet0', '0-9'],
             ['1', ''],
             ["\t", ''],
@@ -101,7 +98,6 @@ class AlnumTest extends TestCase
     {
         return [
             ['', ''],
-            ['number 100%', ''],
             ['@#$', ''],
             ['_', ''],
             ['dgç', ''],

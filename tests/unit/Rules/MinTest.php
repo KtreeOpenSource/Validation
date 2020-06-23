@@ -11,7 +11,6 @@
 
 namespace Respect\Validation\Rules;
 
-use Respect\Validation\TestCase;
 use DateTime;
 
 /**
@@ -19,7 +18,7 @@ use DateTime;
  * @covers Respect\Validation\Rules\Min
  * @covers Respect\Validation\Exceptions\MinException
  */
-class MinTest extends TestCase
+class MinTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider providerForValidMin
@@ -71,8 +70,6 @@ class MinTest extends TestCase
             [0, false, -250],
             [0, false, -50],
             [50, false, 50],
-            [2040, false, '2018-01-25'],
-            [10.5, false, '2018-01-25'],
         ];
     }
 }

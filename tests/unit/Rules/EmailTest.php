@@ -11,9 +11,6 @@
 
 namespace Respect\Validation\Rules;
 
-use Respect\Validation\TestCase;
-use stdClass;
-
 function class_exists($className)
 {
     if (isset($GLOBALS['class_exists'][$className])) {
@@ -28,7 +25,7 @@ function class_exists($className)
  * @covers Respect\Validation\Rules\Email
  * @covers Respect\Validation\Exceptions\EmailException
  */
-class EmailTest extends TestCase
+class EmailTest extends \PHPUnit_Framework_TestCase
 {
     private function setEmailValidatorExists($value)
     {
@@ -145,10 +142,6 @@ class EmailTest extends TestCase
             ['test@test..com'],
             ['test@test.com.'],
             ['.test@test.com'],
-            [[]],
-            [new stdClass()],
-            [null],
-            [tmpfile()],
         ];
     }
 }
